@@ -1,0 +1,7 @@
+
+.ContainerArtistas{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  background-color: #293133;
+}
