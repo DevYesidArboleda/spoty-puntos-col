@@ -4,6 +4,8 @@
   flex-wrap: wrap;
   gap: 16px;
   background-color: #303030;  
+  align-items: center;
+  height: 100vh;
 }
 
 .album-img-container{
