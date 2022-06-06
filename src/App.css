@@ -3,7 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  background-color: #303030;
+  background-color: #303030;  
 }
 
 .album-img-container{
@@ -67,4 +67,7 @@
   display: flex;
   padding-top: 10px;
   padding-bottom: 20px;
+}
+.ContainerMainPR{
+  height: 100vh;
 }

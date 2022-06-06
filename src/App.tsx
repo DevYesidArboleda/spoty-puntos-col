@@ -73,7 +73,7 @@ const App = () => {
     setNameSong(name)
   }
   if (ArtiSelect && !AlbumSelect) {
-    return <div>
+    return <div className='ContainerMainPR'>
       <div className='main-header'>
         <Header/>
       </div>
@@ -100,7 +100,7 @@ const App = () => {
   }
   if (AlbumSelect && ArtiSelect && !idSong) {
     return (
-      <div>
+      <div className='ContainerMainPR'>
         <button className='buttonBack' onClick={()=>setAlbumSelect('')}>-</button>
         <div className='albumImageSong'>
           <img className='imgSongAlbum' src={AlbumSelectImage} alt="" />
@@ -123,13 +123,13 @@ const App = () => {
     )
   }
   if(AlbumSelect && ArtiSelect && idSong){
-    return <div>      
+    return <div >      
       <button className='buttonBack' onClick={()=>setidSong('')}>-</button>
       <Reproductor name={nameSong} url={urlSong} song={song}/>
     </div>
   }
   return (
-    <div>
+    <div className='ContainerMainPR'>
        <div className='main-header'>
         <Header/>
       </div>
