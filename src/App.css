@@ -3,5 +3,68 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  background-color: #293133;
+  background-color: #303030;
+}
+
+.album-img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(#070707, #303030);
+  background-color: #303030;
+}
+
+.album-img{
+  width:100px;
+  height:100px;
+  border-radius:150px;
+}
+
+.textAlbum{
+  background-color: #303030;
+}
+
+.buttonBack{
+  width:20px;
+  height:20px;
+  border-radius: 50%;
+  border: 0;
+  opacity: 0.5;
+  position: absolute;
+  margin: 4px;
+}
+
+.albumImageSong{
+  padding: 14px;
+  display: flex;
+  background-color: #303030;
+}
+
+.imgSongAlbum{
+  width:130px;
+  height:130px;
+}
+
+
+.textAlmbunSong{
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  padding-left: 10px;
+  align-items: center;
+  display: flex;
+  
+}
+
+.CancionesText{
+  background-color: black;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  padding-left: 10px;
+  align-items: center;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }

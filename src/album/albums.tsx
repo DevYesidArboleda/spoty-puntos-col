@@ -1,5 +1,6 @@
 import React, { Fragment, useMemo } from 'react'
 import { pathOr } from 'ramda'
+import './albums.css'
 
 const Albums = (props:any) => {
     const info = useMemo(()=>pathOr({},['info'],props),[props])    
@@ -9,12 +10,12 @@ const Albums = (props:any) => {
     const spotify = useMemo(()=>pathOr('',['spotify_url'],info),[info])
     
   return (
-    <div className='containerAlbum'>
+    <div className='containerAlbum'>      
         <div className='containerAlbumSon'>
             <img src={image} alt="" className='imgMiniaturaAlbum'/>
             <div className='container-tracks'>
                 <div className="texto-album">{name}</div>
-                <div className="tracks-album">{canciones}</div>
+                <div className="tracks-album">Canciones: {canciones}</div>
             </div>
         </div>        
     </div>

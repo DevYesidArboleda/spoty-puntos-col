@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Artistas from './artistas';
-import Albums from './albums';
+import Artistas from './artistas/artistas';
+import Albums from './album/albums';
 import { pathOr, find } from 'ramda'
-import Song from './song';
-import Reproductor from './reproductor';
+import Song from './song/song';
+import Reproductor from './reproductor/reproductor';
+import Footer from './main/footer';
+import Header from './main/header';
 
 const App = () => {
   const [infoArtista, setInfoArtista] = useState<any[]>([])
@@ -72,11 +74,15 @@ const App = () => {
   }
   if (ArtiSelect && !AlbumSelect) {
     return <div>
-      <button onClick={()=>setartiSelect('')}>atras</button>
-      <div>
+      <div className='main-header'>
+        <Header/>
+      </div>
+      <button className='buttonBack' onClick={()=>setartiSelect('')}>-</button>
+      <div className='album-img-container'>
         <img src={ArtiSelectImg} alt="" className='album-img' />
         <div className="album-name">{ArtiSelectName}</div>
       </div>
+      <div className='textAlbum'>Álbumes</div>
       {albums.map((album: any,index:number) => {
         const id = pathOr('', ['id'], album)
         const name = pathOr('', ['name'], album)
@@ -87,15 +93,21 @@ const App = () => {
           </div>
         )
       })}
+      <div className='main-footer'>
+      <Footer/>
+    </div>
     </div>
   }
   if (AlbumSelect && ArtiSelect && !idSong) {
     return (
       <div>
-        <button onClick={()=>setAlbumSelect('')}>atras</button>
-        <div>
-          <img src={AlbumSelectImage} alt="" />
-          <div>{AlbumSelectName}</div>
+        <button className='buttonBack' onClick={()=>setAlbumSelect('')}>-</button>
+        <div className='albumImageSong'>
+          <img className='imgSongAlbum' src={AlbumSelectImage} alt="" />
+          <div className='textAlmbunSong'>{AlbumSelectName}</div>
+        </div>
+        <div className='CancionesText'>
+          Caciones
         </div>
        {song.map((itemSong: any,index:number) => {
         const id = pathOr('', ['id'], itemSong)
@@ -112,12 +124,16 @@ const App = () => {
   }
   if(AlbumSelect && ArtiSelect && idSong){
     return <div>      
-      <button onClick={()=>setidSong('')}>atras</button>
+      <button className='buttonBack' onClick={()=>setidSong('')}>-</button>
       <Reproductor name={nameSong} url={urlSong} song={song}/>
     </div>
   }
   return (
-    <div className='ContainerArtistas'>
+    <div>
+       <div className='main-header'>
+        <Header/>
+      </div>
+      <div className='ContainerArtistas'>
       {infoArtista.map((item: any,index:number) => {
         const id = pathOr('', ['id'], item)
         const name = pathOr('', ['name'], item)
@@ -128,6 +144,10 @@ const App = () => {
           </div>
         )
       })}
+    </div>
+    <div className='main-footer'>
+      <Footer/>
+    </div>
     </div>
   );
 }

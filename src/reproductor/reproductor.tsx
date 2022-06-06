@@ -1,7 +1,7 @@
 import React, { Fragment, useMemo, useState, useEffect } from 'react'
-import ReactPlayer from 'react-player'
 import { pathOr } from 'ramda'
 import SpotifyPlayer from 'react-spotify-player';
+import './reproductor.css'
 
 const Reproductor = (props:any) => {
     const name = useMemo(()=>pathOr('',['name'],props),[props])
@@ -24,15 +24,15 @@ const Reproductor = (props:any) => {
     }, [song])
      
   return (
-    <div>
+    <div className='reproductorMain'>
         <SpotifyPlayer
             uri={cancion}
         />
         <div>
-            <div>
-                sugeridos                
+            <div className='Text-sugeridos'>
+                Sugeridos                
             </div>
-            <div>
+            <div className='Text-sugeridos-song'>
                 {sugeridos.map((item: any,index:number)=>{
                     const name = pathOr('', ['name'], item)
                     const url = pathOr('', ['spotify_url'], item)

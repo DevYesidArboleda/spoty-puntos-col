@@ -1,0 +1,15 @@
+.container-tracks-song{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 4px;
+    border-bottom: 0.5px solid gray;
+}
+
+.containerSong{
+    background-color: black;
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+    padding-left: 10px;
+}
