@@ -6,8 +6,15 @@
   background-color: #303030;  
   align-items: center;
   height: 100vh;
+  
 }
 
+@media (max-width: 600px) {
+  .ContainerArtistas{
+    height:auto ;
+    justify-content: center;
+  }
+}
 .album-img-container{
   display: flex;
   justify-content: center;
